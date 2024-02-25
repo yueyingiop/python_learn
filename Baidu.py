@@ -1,11 +1,3 @@
-"""
-牢骚:
-也不知道这鸟毛项目哪来的,
-36个项目一半的爬虫
-要么不是连接失效
-要么就是API更新用不了
-我就删了全重写了翻译功能
-"""
 import random
 import hashlib
 import urllib
@@ -49,10 +41,10 @@ def tranlate(q, fromLang="auto", toLang="zh"):
         需要被翻译成的语言,默认为zh(中文)\n
     """
     # api申请地址 https://fanyi-api.baidu.com/manage/developer
-    appid = '20231114001880451'  # appid
-    secretKey = 'SVqvuupPtu449DWBRwnx'  # 密钥
+    appid = '你的appid'  # appid
+    secretKey = '你的密钥'  # 密钥
 
-    myurl = '/api/trans/vip/translate'  #API地址
+    #'/api/trans/vip/translate'  #API地址
     salt = random.randint(32768, 65536)  # 随机数,API需要
     sign = hashlib.md5((appid + q + str(salt) + secretKey).encode()).hexdigest()  # md5标签
     # 完整访问地址,其中urllib.parse.quote函数将q转为ASCII码
